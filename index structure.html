@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indiscope Index - भारत के विकास का एक व्यापक इंडेक्स जो विभिन्न श्रेणियों में अंक प्रदान करता है।">
+  <meta name="keywords" content="भारत, विकास, इंडेक्स, श्रेणियाँ, सामाजिक, पर्यावरण, अर्थव्यवस्था, राजनीति">
+  <meta name="author" content="Indiscope">
+  <title>Indiscope Index</title>
+  <style>
+    /* मुख्य बॉडी और बैकग्राउंड */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* डार्क मोड का स्टाइल */
+body.dark-mode {
+    background-color: #333;
+    color: 222;
+}
+
+/* शीर्षक क्षेत्र */
+.header {
+    background-color: #003366;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-options button,
+.header-options input {
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+    border: none;
+    background-color: #00509e;
+    color: white;
+    cursor: pointer;
+}
+
+.header-options button:hover,
+.header-options input:focus {
+    background-color: #003366;
+}
+
+/* मुख्य सामग्री क्षेत्र */
+.main-content {
+    padding: 20px;
+}
+
+/* परिचय सेक्शन */
+.intro-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2 {
+    font-size: 24px;
+    color: #003366;
+}
+
+.intro-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* फिल्टर सेक्शन */
+.filters-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters-section h3 {
+    font-size: 20px;
+    color: #003366;
+}
+
+.filter-controls label,
+.filter-controls select,
+.filter-controls button {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.filter-controls select,
+.filter-controls button {
+    background-color: #00509e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-controls button:hover {
+    background-color: #003366;
+}
+
+.filter-controls select {
+    width: 200px;
+}
+
+/* इंडेक्स टेबल */
+.index-table-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.index-table-section h3 {
+    font-size: 20px;
+    color: #003366;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #003366;
+    color: white;
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* डाउनलोड सेक्शन */
+.download-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.download-section h3 {
+    font-size: 20px;
+    color: #003366;
+}
+
+.download-section button {
+    background-color: #00509e;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.download-section button:hover {
+    background-color: #003366;
+}
+
+/* पाद लेख */
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* डार्क मोड पृष्ठ के लिए अतिरिक्त स्टाइल */
+body.dark-mode .header {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .filter-controls select,
+body.dark-mode .filter-controls button {
+    background-color: yellowgreen;
+    color: darkred;
+}
+
+body.dark-mode table th {
+    background-color: #333;
+}
+
+body.dark-mode table td {
+    background-color: #333;
+}
+
+body.dark-mode .footer {
+    background-color: #333;
+}
+
+/* Responsive डिजाइन */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header .logo h1 {
+        font-size: 20px;
+    }
+
+    .header-options {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-controls select {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .download-section button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- शीर्षक क्षेत्र -->
+  <header class="header">
+    <div class="logo">
+      <h1>Indiscope Index</h1>
+    </div>
+    <div class="header-options">
+      <button id="darkModeToggle">डार्क मोड</button>
+      <input type="text" id="searchInput" placeholder="श्रेणी या भाग द्वारा खोजें">
+    </div>
+  </header>
+
+  <!-- मुख्य सामग्री क्षेत्र -->
+  <main class="main-content">
+    <section class="intro-section">
+      <h2>Indiscope Index में आपका स्वागत है</h2>
+      <p>
+        यह इंडेक्स भारत के विकास का सूचकांक है, जिसमें विभिन्न श्रेणियों और भागों के आधार पर अंक प्रदान किए जाते हैं।
+        इस इंडेक्स को अंतरराष्ट्रीय मानकों के आधार पर तैयार किया गया है और इसमें भारत के सामाजिक, आर्थिक, पर्यावरणीय, और राजनीतिक विकास का विश्लेषण किया गया है।
+      </p>
+      <p>
+        इस इंडेक्स में कुल 100 श्रेणियाँ हैं, जिन्हें 20 भागों में बाँटा गया है। प्रत्येक भाग को 8 अंक आवंटित होते हैं।
+        यह इंडेक्स विभिन्न सामाजिक और आर्थिक मुद्दों पर आधारित है, जिनमें स्वास्थ्य, शिक्षा, पर्यावरण, राजनीति, और अन्य महत्वपूर्ण क्षेत्र शामिल हैं।
+      </p>
+    </section>
+
+    <!-- फिल्टर सेक्शन -->
+    <section class="filters-section">
+      <h3>डेटा फिल्टर करें</h3>
+      <div class="filter-controls">
+        <label for="categoryFilter">श्रेणी चुनें:</label>
+        <select id="categoryFilter">
+          <option value="">श्रेणी चुनें</option>
+          <option value="आर्थिक">आर्थिक</option>
+          <option value="पर्यावरण">पर्यावरण</option>
+          <option value="समाजशास्त्र">समाजशास्त्र</option>
+          <option value="राजनीति">राजनीति</option>
+          <option value="स्वास्थ्य">स्वास्थ्य</option>
+        </select>
+        <label for="partFilter">भाग चुनें:</label>
+        <select id="partFilter">
+          <option value="">भाग चुनें</option>
+          <option value="मूलभूत ढांचा">मूलभूत ढांचा</option>
+          <option value="शिक्षा">शिक्षा</option>
+          <option value="स्वास्थ्य सेवाएँ">स्वास्थ्य सेवाएँ</option>
+          <option value="विकास दर">विकास दर</option>
+        </select>
+        <label for="scoreFilter">अंक चुनें:</label>
+        <select id="scoreFilter">
+          <option value="">अंक चुनें</option>
+          <option value="0-2">0-2</option>
+          <option value="2-4">2-4</option>
+          <option value="4-6">4-6</option>
+          <option value="6-8">6-8</option>
+        </select>
+        <button id="applyFilters">फिल्टर लागू करें</button>
+      </div>
+    </section>
+
+    <!-- इंडेक्स टेबल -->
+    <section class="index-table-section">
+      <h3>भारत का विकास इंडेक्स</h3>
+      <table id="indexTable">
+        <thead>
+          <tr>
+            <th>रैंक</th>
+            <th>श्रेणी</th>
+            <th>भाग</th>
+            <th>अंक</th>
+            <th>वर्ष</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- डेटा यहाँ लोड होगा -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- डाउनलोड सेक्शन -->
+    <section class="download-section">
+      <h3>डाउनलोड करें</h3>
+      <button id="downloadExcel">एक्सेल में डाउनलोड करें</button>
+      <button id="downloadPDF">पीडीएफ में डाउनलोड करें</button>
+    </section>
+  </main>
+
+  <!-- पाद लेख क्षेत्र -->
+  <footer class="footer">
+    <p>© 2025 Indiscope. सभी अधिकार सुरक्षित हैं।</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const table = document.getElementById("indexTable");
+  const tbody = table.querySelector("tbody");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const partFilter = document.getElementById("partFilter");
+  const scoreFilter = document.getElementById("scoreFilter");
+  const searchInput = document.getElementById("searchInput");
+  const sortButtons = document.querySelectorAll(".sort-btn");
+  const downloadExcel = document.getElementById("downloadExcel");
+  const downloadPDF = document.getElementById("downloadPDF");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  let indexData = [];
+
+  // *** डेटा लोड करना ***
+  fetch("indiscope_index.json")
+    .then(response => response.json())
+    .then(data => {
+      indexData = data;
+      renderTable(indexData);
+    })
+    .catch(error => console.error("डेटा लोड करने में त्रुटि:", error));
+
+  // *** तालिका को प्रदर्शित करना ***
+  function renderTable(data) {
+    tbody.innerHTML = "";
+    data.forEach(row => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+                <td>${row.rank}</td>
+                <td>${row.category}</td>
+                <td>${row.part}</td>
+                <td>${row.score}</td>
+                <td>${row.year}</td>
+            `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // *** सॉर्टिंग फंक्शन ***
+  sortButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      const column = this.dataset.column;
+      const order = this.dataset.order === "asc" ? "desc" : "asc";
+      this.dataset.order = order;
+
+      indexData.sort((a, b) => {
+        if (column === "score" || column === "rank") {
+          return order === "asc" ? a[column] - b[column] : b[column] - a[column];
+        } else {
+          return order === "asc" ? a[column].localeCompare(b[column]) : b[column].localeCompare(a[column]);
+        }
+      });
+
+      renderTable(indexData);
+    });
+  });
+
+  // *** फिल्टरिंग फंक्शन ***
+  function filterData() {
+    const selectedCategory = categoryFilter.value;
+    const selectedPart = partFilter.value;
+    const scoreRange = scoreFilter.value.split("-").map(Number);
+    const searchQuery = searchInput.value.toLowerCase();
+
+    let filteredData = indexData.filter(row => {
+      return (
+        (selectedCategory === "" || row.category === selectedCategory) &&
+        (selectedPart === "" || row.part === selectedPart) &&
+        (scoreFilter.value === "" || (row.score >= scoreRange[0] && row.score <= scoreRange[1])) &&
+        (searchQuery === "" || row.category.toLowerCase().includes(searchQuery))
+      );
+    });
+
+    renderTable(filteredData);
+  }
+
+  categoryFilter.addEventListener("change", filterData);
+  partFilter.addEventListener("change", filterData);
+  scoreFilter.addEventListener("change", filterData);
+  searchInput.addEventListener("keyup", filterData);
+
+  // *** Excel डाउनलोड फंक्शन ***
+  downloadExcel.addEventListener("click", function() {
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(indexData);
+    XLSX.utils.book_append_sheet(wb, ws, "Index Data");
+    XLSX.writeFile(wb, "India_Index.xlsx");
+  });
+
+  // *** PDF डाउनलोड फंक्शन ***
+  downloadPDF.addEventListener("click", function() {
+    const doc = new jsPDF();
+    doc.text("India Development Index", 10, 10);
+    let y = 20;
+    indexData.forEach(row => {
+      doc.text(`${row.rank} - ${row.category} - ${row.part} - ${row.score} - ${row.year}`, 10, y);
+      y += 10;
+    });
+    doc.save("India_Index.pdf");
+  });
+
+  // *** डार्क मोड टॉगल फंक्शन ***
+  darkModeToggle.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+  });
+});
+  </script>
+</body>
+
+</html>

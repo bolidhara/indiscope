@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>रिपोर्ट्स</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <header>
+        <h1>रिपोर्ट्स</h1>
+    </header>
+
+    <section class="filter-section">
+        <form class="report-filters">
+            <div>
+                <label for="category">श्रेणी:</label>
+                <select id="category">
+                    <option value="">-- श्रेणी चुनें --</option>
+                </select>
+            </div>
+            <div>
+                <label for="subcategory">उपश्रेणी:</label>
+                <select id="subcategory">
+                    <option value="">-- उपश्रेणी चुनें --</option>
+                </select>
+            </div>
+            <div>
+                <label for="date">तिथि:</label>
+                <input type="date" id="date">
+            </div>
+        </form>
+
+        <div class="search-bar">
+            <input type="text" placeholder="रिपोर्ट्स खोजें...">
+            <button>खोजें</button>
+        </div>
+    </section>
+
+    <section class="reports-section">
+        <div class="all-reports"></div>
+    </section>
+
+    <section class="pagination">
+        <button class="prev-page">पिछला</button>
+        <span class="page-number">1</span>
+        <button class="next-page">अगला</button>
+    </section>
+<br><br><br>
+    <script src="report.js"></script>
+    <!-- Footer Section -->
+<footer>
+  <p>&copy; 2015 - 2025 indiscope | सभी अधिकार सुरक्षित</p>
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank">फेसबुक</a>
+    <a href="https://twitter.com" target="_blank">ट्विटर</a>
+    <a href="https://linkedin.com" target="_blank">लिंक्डइन</a>
+  </div>
+
+  <div class="footer-links">
+    <a href="about us.html">हमारे बारे में</a>
+    <a href="contact us.html">संपर्क करें</a>
+    <a href="newslater.html">न्यूज़लेटर और प्रीमियम</a>
+    <a href="privacy policy.html">गोपनीयता नीति</a>
+    <a href="terms.html">नियम और शर्तें</a>
+    <a href="copyright.html">हमारा कॉपीराइट</a>
+    <a href="disclaimer.html">अस्वीकरण</a>
+  </div>
+</footer>
+</body>
+</html>

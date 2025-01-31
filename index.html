@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="भारत पर गहन रिपोर्ट्स – ताजगी और निष्पक्षता के साथ, देश के महत्वपूर्ण मुद्दों पर जानकारी।">
+    <meta name="keywords" content="भारत रिपोर्ट्स, जलवायु परिवर्तन, समाजशास्त्र, राजनीति, स्वास्थ्य, आर्थिक रिपोर्ट्स">
+    <title>भारत पर गहन रिपोर्ट्स</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Indiscope</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">होम</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">श्रेणियां</a>
+                    <div class="dropdown-content">
+                        <div class="category">
+                            <a href="#">आर्थिक</a>
+                            <div class="subcategory">
+                                <a href="#">वित्तीय स्थिति</a>
+                                <a href="#">मुद्रास्फीति</a>
+                                <a href="#">विकास दर</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#">पर्यावरण</a>
+                            <div class="subcategory">
+                                <a href="#">जलवायु परिवर्तन</a>
+                                <a href="#">प्राकृतिक आपदाएँ</a>
+                                <a href="#">जैव विविधता</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#">समाजशास्त्र</a>
+                            <div class="subcategory">
+                                <a href="#">शिक्षा</a>
+                                <a href="#">स्वास्थ्य</a>
+                                <a href="#">आधुनिक समाज</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#">राजनीति</a>
+                            <div class="subcategory">
+                                <a href="#">सामाजिक नीति</a>
+                                <a href="#">राजनीतिक दल</a>
+                                <a href="#">चुनाव</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <a href="#">स्वास्थ्य</a>
+                            <div class="subcategory">
+                                <a href="#">मनोविज्ञान</a>
+                                <a href="#">सार्वजनिक स्वास्थ्य</a>
+                                <a href="#">महामारी</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="report.html">रिपोर्ट</a></li>
+                <li><a href="indiscope index.html">Index</a></li>
+                <li><a href="contact us.html">संपर्क</a></li>
+    <li class="dropdown">
+                <a href="#" id="language-toggle">भाषा</a>
+                <ul class="dropdown-content" id="language-menu">
+                    <li><a href="#" data-lang="hi">हिन्दी</a></li>
+                    <li><a href="#" data-lang="en">English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Main Banner Section -->
+    <section class="main-banner">
+        <h1>भारत में जलवायु परिवर्तन के प्रभाव: एक गहन रिपोर्ट</h1>
+        <p>भारत पर गहन रिपोर्ट्स – आज की महत्वपूर्ण खबरें</p>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <h2>हमारे बारे में</h2>
+        <p>भारत पर गहन रिपोर्ट्स वेबसाइट में आपका स्वागत है। यहां आपको देश के विभिन्न महत्वपूर्ण मुद्दों पर निष्पक्ष और गहन रिपोर्ट्स मिलेंगी। हमारा उद्देश्य देशवासियों को विश्वसनीय और ताजगी से भरपूर जानकारी प्रदान करना है। हम सामाजिक, आर्थिक, पर्यावरणीय, स्वास्थ्य और अन्य महत्वपूर्ण पहलुओं पर गहराई से रिपोर्ट्स प्रस्तुत करते हैं।</p>
+    </section>
+
+ <div class="container">
+    <h1>रिपोर्ट्स</h1>
+
+  <!-- रिपोर्ट फ़िल्टर फॉर्म -->
+  <div class="report-filters">
+    <label for="category">वर्ग:</label>
+    <select id="category">
+      <option value="">-- सभी वर्ग --</option>
+    </select>
+
+    <label for="subcategory">उपवर्ग:</label>
+    <select id="subcategory">
+      <option value="">-- उपवर्ग चुनें --</option>
+    </select>
+
+    <label for="date">तिथि:</label>
+    <input type="date" id="date">
+  </div>
+
+  <!-- खोज बार -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="रिपोर्ट खोजें..."> <br><br>
+    <button id="search-button">खोजें</button>
+  </div>
+
+  <!-- रिपोर्ट लिस्ट -->
+  <div class="all-reports"></div>
+<br><br>
+  <!-- पेजिनेशन -->
+  <div class="pagination-controls">
+    <button class="prev-page" disabled>पिछला</button>
+    <span class="page-number">1</span>
+    <button class="next-page" disabled>अगला</button>
+  </div>
+  </div><br>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h3>न्यूज़लेटर सब्सक्रिप्शन</h3>
+        <p>सदस्य बनें और प्राप्त करें भारत की गहन रिपोर्ट्स!</p>
+        <input type="email" placeholder="अपना ईमेल दर्ज करें"><br><br>
+        <button>साइन अप करें</button>
+    </section>
+
+<!-- Footer Section -->
+<footer>
+  <p>&copy; 2015 - 2025 indiscope | सभी अधिकार सुरक्षित</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61572376990395" target="_blank">फेसबुक</a>
+    <a href="https://twitter.com" target="_blank">ट्विटर</a>
+    <a href="https://linkedin.com" target="_blank">लिंक्डइन</a>
+  </div>
+
+  <div class="footer-links">
+    <a href="about us.html">हमारे बारे में</a>
+    <a href="contact us.html">संपर्क करें</a>
+    <a href="newslater.html">न्यूज़लेटर और प्रीमियम</a>
+    <a href="privacy policy.html" target="_blank">गोपनीयता नीति</a>
+    <a href="terms-conditions.html">नियम और शर्तें</a>
+    <a href="copyright.html">हमारा कॉपीराइट</a>
+    <a href="disclaimer.html">अस्वीकरण</a>
+  </div>
+</footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

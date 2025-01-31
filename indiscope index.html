@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiscope Index - भारत विकास सूचकांक</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <h1>🇮🇳 Indiscope Index - भारत विकास सूचकांक</h1>
+        <p>भारत के समग्र विकास का व्यापक विश्लेषण</p>
+    </div>
+</header>
+
+<!-- Navigation Menu -->
+<nav>
+    <ul>
+        <li><a href="#overview">परिचय</a></li>
+        <li><a href="#structure">संरचना</a></li>
+        <li><a href="#rankings">रैंकिंग</a></li>
+        <li><a href="#statistics">सांख्यिकी</a></li>
+        <li><a href="#data-sources">डेटा स्रोत</a></li>
+    </ul>
+</nav>
+
+<!-- Overview Section -->
+<section id="overview">
+    <h2>📊 Indiscope Index - परिचय</h2>
+    <p>यह सूचकांक भारत के आर्थिक, सामाजिक, पर्यावरणीय और प्रशासनिक क्षेत्रों का आकलन करता है...</p>
+</section>
+
+<!-- Structure Section -->
+<section id="structure">
+    <h2>🔍 संरचना</h2>
+    <p>Indiscope Index 20 भागों और 100 श्रेणियों में विभाजित है...</p>
+</section>
+
+<!-- Rankings -->
+<section id="rankings">
+    <h2>🏆 वैश्विक रैंकिंग</h2>
+    <ul>
+        <li>मानव विकास सूचकांक (HDI) - <b>132वां स्थान</b></li>
+        <li>ग्लोबल इनोवेशन इंडेक्स - <b>40वां स्थान</b></li>
+    </ul>
+</section>
+
+<!-- Statistics Section -->
+<section id="statistics">
+    <h2>📉 सांख्यिकी विश्लेषण</h2>
+
+    <div class="chart-container">
+        <h3>💰 आर्थिक विकास</h3>
+        <canvas id="economicChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🎓 शिक्षा</h3>
+        <canvas id="educationChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🏥 स्वास्थ्य</h3>
+        <canvas id="healthChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🌿 पर्यावरण</h3>
+        <canvas id="environmentChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🚧 आधारभूत संरचना</h3>
+        <canvas id="infrastructureChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🚜 कृषि और ग्रामीण विकास</h3>
+        <canvas id="agricultureChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>💻 डिजिटल परिवर्तन</h3>
+        <canvas id="digitalChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>👩‍⚖️ महिला सशक्तिकरण</h3>
+        <canvas id="womenEmpowermentChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🤝 सामाजिक समावेशन</h3>
+        <canvas id="socialInclusionChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🔬 नवाचार और अनुसंधान</h3>
+        <canvas id="innovationChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>📉 आर्थिक समानता</h3>
+        <canvas id="economicEqualityChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>⚡ ऊर्जा और बिजली</h3>
+        <canvas id="energyChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>⚖️ कानून और व्यवस्था</h3>
+        <canvas id="lawChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🏭 व्यापार और उद्योग</h3>
+        <canvas id="businessChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🏙️ शहरीकरण और स्मार्ट सिटी</h3>
+        <canvas id="urbanizationChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🛰️ वैज्ञानिक प्रगति</h3>
+        <canvas id="scienceChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🏛️ प्रशासन और सुशासन</h3>
+        <canvas id="governanceChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>🏦 वित्तीय समावेशन</h3>
+        <canvas id="financialChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>💧 जल संसाधन प्रबंधन</h3>
+        <canvas id="waterResourcesChart"></canvas>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Indiscope Index | सभी अधिकार सुरक्षित</p>
+</footer>
+
+<script>
+    function createChart(chartId, type, labels, data, backgroundColors, borderColor) {
+        new Chart(document.getElementById(chartId).getContext('2d'), {
+            type: type,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: chartId,
+                    data: data,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColor,
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+// 🔰 सभी 20 श्रेणियों के चार्ट लोड करें
+
+// 1️⃣ आर्थिक विकास  
+createChart('economicChart', 'bar', ['GDP', 'निर्यात', 'स्टार्टअप'], [7.5, 6.2, 8.1], ['#4CAF50', '#FF9800', '#F44336'], '#000');
+
+// 2️⃣ शिक्षा  
+createChart('educationChart', 'pie', ['प्राथमिक', 'माध्यमिक', 'उच्च'], [40, 35, 25], ['#FFD700', '#FF4500', '#1E90FF'], '#000');
+
+// 3️⃣ स्वास्थ्य  
+createChart('healthChart', 'line', ['टीकाकरण', 'अस्पताल', 'बजट'], [85, 70, 50], ['#4CAF50'], '#000');
+
+// 4️⃣ पर्यावरण  
+createChart('environmentChart', 'bar', ['वायु गुणवत्ता', 'जल संरक्षण', 'नवीकरणीय ऊर्जा'], [60, 75, 80], ['#2196F3', '#E91E63', '#FFC107'], '#000');
+
+// 5️⃣ आधारभूत संरचना  
+createChart('infrastructureChart', 'bar', ['सड़कें', 'रेलवे', 'हवाई अड्डे'], [80, 70, 85], ['#673AB7', '#00BCD4', '#FF5722'], '#000');
+
+// 6️⃣ कृषि और ग्रामीण विकास  
+createChart('agricultureChart', 'bar', ['फसल उत्पादन', 'सिंचाई', 'जैविक खेती'], [75, 65, 85], ['#4CAF50', '#8BC34A', '#CDDC39'], '#000');
+
+// 7️⃣ डिजिटल परिवर्तन  
+createChart('digitalChart', 'line', ['इंटरनेट उपयोग', 'डिजिटल भुगतान', 'साइबर सुरक्षा'], [90, 80, 70], ['#FF9800'], '#000');
+
+// 8️⃣ महिला सशक्तिकरण  
+createChart('womenEmpowermentChart', 'pie', ['महिला श्रम भागीदारी', 'लैंगिक समानता', 'महिला सुरक्षा'], [55, 65, 75], ['#E91E63', '#FFEB3B', '#3F51B5'], '#000');
+
+// 9️⃣ सामाजिक समावेशन  
+createChart('socialInclusionChart', 'bar', ['अनुसूचित जाति/जनजाति', 'विकलांगता', 'अल्पसंख्यक विकास'], [50, 60, 70], ['#9C27B0', '#00BCD4', '#8BC34A'], '#000');
+
+// 🔟 नवाचार और अनुसंधान  
+createChart('innovationChart', 'bar', ['पेटेंट दाखिले', 'AI अनुसंधान', 'वैज्ञानिक निवेश'], [65, 80, 85], ['#8E44AD', '#3498DB', '#E74C3C'], '#000');
+
+// 1️⃣1️⃣ आर्थिक समानता  
+createChart('economicEqualityChart', 'line', ['गरीबी दर', 'आय असमानता', 'बेरोजगारी'], [30, 40, 25], ['#FF5733'], '#000');
+
+// 1️⃣2️⃣ ऊर्जा और बिजली  
+createChart('energyChart', 'pie', ['बिजली उत्पादन', 'अक्षय ऊर्जा', 'ऊर्जा दक्षता'], [80, 60, 75], ['#FFD700', '#FF4500', '#1E90FF'], '#000');
+
+// 1️⃣3️⃣ कानून और व्यवस्था  
+createChart('lawChart', 'bar', ['अपराध दर', 'न्याय प्रणाली', 'पुलिस सुधार'], [50, 65, 80], ['#2E4053', '#F39C12', '#16A085'], '#000');
+
+// 1️⃣4️⃣ व्यापार और उद्योग  
+createChart('businessChart', 'line', ['निर्यात', 'औद्योगिक उत्पादन', 'FDI'], [70, 75, 80], ['#FF9800'], '#000');
+
+// 1️⃣5️⃣ शहरीकरण और स्मार्ट सिटी  
+createChart('urbanizationChart', 'pie', ['स्मार्ट सिटी', 'शहरी बुनियादी ढांचा', 'परिवहन'], [50, 70, 65], ['#009688', '#FFC107', '#673AB7'], '#000');
+
+// 1️⃣6️⃣ वैज्ञानिक प्रगति  
+createChart('scienceChart', 'bar', ['अंतरिक्ष अनुसंधान', 'बायोटेक्नोलॉजी', 'AI प्रगति'], [80, 75, 85], ['#1E8449', '#9B59B6', '#E74C3C'], '#000');
+
+// 1️⃣7️⃣ प्रशासन और सुशासन  
+createChart('governanceChart', 'bar', ['भ्रष्टाचार सूचकांक', 'सरकारी नीतियाँ', 'जन भागीदारी'], [60, 70, 85], ['#34495E', '#D35400', '#2ECC71'], '#000');
+
+// 1️⃣8️⃣ वित्तीय समावेशन  
+createChart('financialChart', 'line', ['बैंकिंग', 'डिजिटल भुगतान', 'माइक्रोफाइनेंस'], [75, 85, 70], ['#2980B9'], '#000');
+
+// 1️⃣9️⃣ पर्यटन और सांस्कृतिक धरोहर  
+createChart('tourismChart', 'bar', ['पर्यटन दर', 'संरक्षित स्थल', 'पर्यटन बजट'], [65, 75, 80], ['#FF4500', '#FFD700', '#1E90FF'], '#000');
+
+// 2️⃣0️⃣ जल संसाधन प्रबंधन  
+createChart('waterResourcesChart', 'pie', ['जल संचयन', 'भूजल स्तर', 'नदियों की सफाई'], [55, 65, 75], ['#2E86C1', '#28B463', '#F4D03F'], '#000');
+
+
+</script>
+
+<style>
+  
+  /* ========== 📌 सामान्य स्टाइल (General Styles) ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* बॉडी स्टाइल */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ========== 📌 हेडर (Header) ========== */
+header {
+    background: linear-gradient(135deg, #2E3A59, #1B2430);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* ========== 📌 नेविगेशन मेनू (Navigation Menu) ========== */
+nav {
+    background: #444;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* ========== 📌 सेक्शन (Sections) ========== */
+section {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2E3A59;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ========== 📌 टेबल (Tables) ========== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #2E3A59;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* ========== 📌 चार्ट कंटेनर (Chart Container) ========== */
+.chart-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+canvas {
+    max-width: 100%;
+    height: 300px;
+}
+
+/* ========== 📌 फ़ुटर (Footer) ========== */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+/* ========== 📌 बटन (Buttons) ========== */
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    background: #2E3A59;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #FFD700;
+    color: #333;
+}
+
+/* ========== 📌 मोबाइल और टेबलेट के लिए रिस्पॉन्सिव स्टाइल ========== */
+@media screen and (max-width: 1024px) {
+    section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        padding: 8px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav {
+        padding: 5px 0;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+        padding: 5px;
+    }
+
+    button {
+        width: 180px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    table, th, td {
+        font-size: 0.8em;
+        padding: 4px;
+    }
+
+    button {
+        width: 160px;
+        font-size: 0.9em;
+    }
+}
+</style>
+
+</body>
+</html>

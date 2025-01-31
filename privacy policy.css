@@ -1,0 +1,116 @@
+/* सामान्य स्टाइलिंग */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* हेडर */
+header {
+  background: #007b5e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* मुख्य कंटेंट */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* अनुभाग (Sections) */
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 22px;
+  color: #007b5e;
+  border-left: 4px solid #007b5e;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* संपर्क जानकारी */
+section p strong {
+  color: #007b5e;
+}
+
+/* लिंक स्टाइलिंग */
+a {
+  color: #007b5e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* फुटर */
+footer {
+  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* रिस्पॉन्सिव डिजाइन */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+}

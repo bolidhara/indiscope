@@ -1,0 +1,114 @@
+/* बेसिक स्टाइलिंग */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* हेडर */
+header {
+    background-color: #007b5e;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* मुख्य सामग्री */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 22px;
+    color: #007b5e;
+    border-left: 5px solid #007b5e;
+    padding-left: 10px;
+}
+
+section p, section ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+section ul {
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 8px;
+}
+
+/* लिंक */
+a {
+    color: #007b5e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* संपर्क जानकारी */
+section ul li strong {
+    color: #333;
+}
+
+/* फुटर */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #ffcc00;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* उत्तरदायी डिज़ाइन */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
